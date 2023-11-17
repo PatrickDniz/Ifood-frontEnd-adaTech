@@ -1,0 +1,219 @@
+@import '../variables/index.scss'; 
+
+.container-home{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 1920px; 
+    max-width: calc(100% - 20px);
+    padding-block: 20px;
+    height: fit-content;
+    margin: 0 auto;
+    &.invert{
+        flex-direction: row-reverse;
+    }
+    &--left{
+        max-width: 500px;
+        width: fit-content;
+        height: fit-content;
+        max-height: 300px;
+        overflow: hidden;
+        
+        img{
+            max-width: 100%;
+            max-height: 100%;
+            width: fit-content;
+            height: fit-content;
+            object-position: center;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+    }
+
+    &--right{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-left: 60px;
+        .title{
+            position: relative; 
+            width: fit-content;
+            max-width: 100%;
+            @include typhography(big, 700, $primary);
+        }
+        .text{
+            width: fit-content;
+            max-width: 100%;
+            @include typhography(medium, 400, $text);
+        }
+        .sticker{
+            &-container{
+                position: absolute; 
+                top: 0;
+                right: 100%;
+                width: 60px;
+                height: 60px;
+                transform: rotate(-45deg);
+            }
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            
+        }
+    }
+}
+
+.feed{
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    height: fit-content; 
+    &-container{
+        max-width: calc(100% - 40px);
+        margin-left: 20px;
+    } 
+    &-item {
+        height: auto; 
+        max-width: calc(100% - 20px) !important; 
+        margin: 0 auto;
+        figure{ 
+            width: 400px;
+            max-width: calc(100% - 20px);
+        }
+        img{
+            width: 400px;
+            max-width: calc(100% - 20px);
+            height: fit-content;
+            object-fit: scale-down;
+        } 
+    }
+    @media (max-width: 740px){
+        width: 300px;
+        &-item {
+            width: 240px;
+        }
+    } 
+    @media (min-width: 741px){
+        width: 600px; 
+        &-item {
+            width: 400px; 
+        }
+    }
+}
+
+.foodApresenation{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 20px;
+    width: 1920px;
+    max-width: calc(100% - 20px);
+    padding: 20px 0;
+    &-title{
+        text-align: center;
+        @include typhography(big, 700, $primary);
+    }
+    &-rule{
+        display: flex; 
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        &--item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 260px;
+            text-decoration: none;
+            cursor: pointer;
+            span{
+                text-align: center;
+                @include typhography(medium, 400, $text);
+            }
+            &:hover{
+                span{
+                    color: $primary;
+                }
+            }
+        }
+    }
+    &-extra{
+        width: 1250px;
+        max-width: 100%;
+        position: relative;
+        transition: all 500ms;
+        margin: 0 auto;
+        &--temMais{
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 500ms;
+        }
+        &--text{
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            background-color: $primaryBackground;
+            border-radius: 12px;
+            @include typhography(medium, 400, $text);
+        }
+        
+        &:hover{
+            .foodApresenation-extra{
+                &--img,  &--temMais{
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+.reservation{
+    max-width: 90%; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    a{
+        padding: 12px 20px;
+        border-radius: 5px;
+        @include typhography(big, 700, $text);
+        text-decoration: none;
+        background-color: $primaryBackground;
+        &:hover{
+            color: $primary;
+        }
+    }
+}
+
+@media (max-width: 580px) { 
+	.foodApresenation-extra{
+        &--img{
+            position: absolute;
+            right: 0;
+            top: 65%;
+            height: 100px;
+            object-fit: scale-down; 
+            transition: all 500ms;
+        }
+        &--text{
+            padding: 20px;
+        }
+    }
+}
+@media (min-width: 581px) {
+	.foodApresenation-extra{
+        &--img{
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            object-fit: scale-down;
+            transition: all 500ms;
+        }
+        &--text{
+            padding: 20px 120px 20px 120px;
+        }
+    }
+}

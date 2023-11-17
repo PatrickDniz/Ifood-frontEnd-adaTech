@@ -1,0 +1,280 @@
+@import "../variables/index.scss";
+
+.body-payment {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+div.container-payment {
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 5px 5px 10px $primary;
+  background-color: $primaryBackground;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  margin: 100px auto;
+  padding: 0;
+
+}
+
+
+//ORDER PAYMENT 
+
+.order-payment {
+  float: left;
+  z-index: 1;
+  border-bottom-left-radius: 6px;
+  padding: 20px;
+}
+
+.order-payment>h2 {
+  @include typhography(medium, 700, $primaryBackground);
+  width: auto;
+  text-align: center;
+}
+
+.order-payment>h5 {
+  @include typhography(small, 300, $text);
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 15px 0;
+  padding: 10px;
+}
+
+ul.list-payment li>img {
+  @include typhography(small, 400, $text);
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin-bottom: 5px;
+}
+
+ul.list-payment li>h4 {
+  @include typhography(small, 400, $text);
+  width: 50%;
+  display: flex;
+  justify-content: left;
+}
+
+ul.list-payment li>h5 {
+  @include typhography(small, 600, $text);
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.total-payment {
+  letter-spacing: 1px;
+  text-align: left;
+  line-height: 2;
+}
+
+h4.total-payment {
+  @include typhography(medium, 700, $primary);
+}
+
+h5.total-payment {
+  @include typhography(small, 700, $text);
+}
+
+h1.total-payment {
+  @include typhography(big, 700, $primary);
+}
+
+//PAYMENT
+
+.payment {
+  position: relative;
+  width: 350px;
+  float: right;
+  background-color: $containerBackground;
+  padding: 20px;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.payment h2 {
+  @include typhography(medium, 700, $primaryBackground);
+  width: auto;
+  text-align: center;
+}
+
+.card-payment {
+  width: 300px;
+  height: 178px;
+  position: relative;
+  margin: 30px auto;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 6px;
+}
+
+.card-content {
+  @include typhography(small, 500, $text);
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  float: left;
+  z-index: 1;
+  letter-spacing: 1px;
+}
+
+.card-content h5>span {
+  margin-left: 87px;
+}
+
+.card-content h6>span {
+  margin-left: 87px;
+}
+
+#logo-card {
+  position: relative;
+  margin-top: 2px;
+  left: 190px;
+  width: 70px;
+  height: 70px;
+}
+
+.card-form {
+  width: 100%;
+  float: right;
+  padding: 15px 35px;
+}
+
+.card-form>p.field {
+  padding: 2px 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+input.input-payment {
+  @include typhography(small, 400, $text);
+  border-radius: 5px;
+  border: 1px solid $text;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: $primaryBackground;
+  color: $text;
+}
+
+.space {
+  margin-right: 10px;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.button-payment {
+  @include typhography(normal, 600, $primaryBackground);
+  width: 100%;
+  float: right;
+  right: 0px;
+  padding: 10px 20px;
+  background-color: $primary;
+  border-radius: 6px;
+  margin-top: 30px auto;
+  border: 1px solid $primary;
+  transition: background-color 0.3s ease;
+
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.button-payment:hover {
+  @include typhography(normal, 600, $primary);
+  background-color: $primaryBackground;
+}
+
+.button-payment span {
+  display: inline-block;
+  position: relative;
+
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.button-payment span:after {
+  content: "→";
+  color: $primary;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -40px;
+}
+
+.button-payment:hover span {
+  padding-right: 45px;
+}
+
+.button-payment:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+//CARD BACKGROUND
+
+
+.card-bg {
+  height: 200px;
+  width: 300px;
+  position: relative;
+  background: #3ca55c;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #b5ac49,
+      #3ca55c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #b5ac49,
+      #3ca55c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  z-index: -1;
+}
+
+@media (max-width: 800px) {
+  .container-payment {
+
+    p,
+    a,
+    label,
+    input,
+    tr,
+    th,
+    td {
+      font-size: 15px;
+      padding: auto;
+      margin: 10px auto;
+      width: 100%;
+
+    }
+
+    flex-direction: column;
+    max-width: calc(100% - 20px);
+    margin: 40px auto;
+    position: relative;
+
+    #payment {
+      max-width: 100%;
+    }
+  }
+
+  label {
+    display: none;
+  }
+
+
+
+
+}

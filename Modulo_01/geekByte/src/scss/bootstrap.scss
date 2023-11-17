@@ -1,0 +1,16 @@
+$colors: (
+  "black": #0F1216,
+  "gray": #181C23,
+  "white": #fffbf0,
+  "card-bg": #282C33,
+);
+
+$primary: #A6F750; 
+$secondary: #206AFF;
+
+$body-bg: #0F1216;
+$body-color: #fffbf0;
+
+$font-family-sans-serif: 'Ubuntu', sans-serif;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
