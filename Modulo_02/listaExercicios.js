@@ -6,7 +6,7 @@
     'alface', 'espinafre', 'rúcula', 'couve', 'acelga', 'maçã', 'batata'
     ];
 
-    //Primeiro jeito
+    //Primeiro resolução
     const fruta = ['banana', 'maçã', 'abacaxi', 'melancia', 'laranja', 'limão'];
     const legume = ['cenoura', 'batata', 'brócolis', 'abóbora', 'tomate', 'alho-poró'];
     const verdura = ['alface', 'espinafre', 'rúcula', 'couve', 'agrião', 'acelga'];
@@ -31,7 +31,7 @@
     return Qtd;
     }
 
-    //Segundo jeito
+    //Segundo resolução
     const type = {
         fruta: ['banana', 'maçã', 'abacaxi', 'melancia', 'laranja', 'limão'],
         legume: ['cenoura', 'batata', 'brócolis', 'abóbora', 'tomate', 'alho-poró'],
@@ -92,7 +92,7 @@
     ];
 
     
-    // Primeira Forma
+    // Primeira resolução
     function calcularIMC(pessoa) {
         return pessoa.peso / Math.pow(pessoa.altura, 2);
     }
@@ -105,7 +105,7 @@
         console.log(`O IMC de ${pessoa.nome} é ${imc.toFixed(2)}`);
     }
 
-    // Segunda Forma
+    // Segunda resolução
     const calcularIMC2 = (people) => { people.imc = parseFloat((people.peso / Math.pow(people.altura, 2)).toFixed(2)) };
 
     const newPeople = pessoas.map((e) => {
@@ -125,7 +125,7 @@
         { nome: 'Julia', notas: [10, 8, 9] }
     ];
 
-   // Primeira Forma
+   // Primeira resolução
     const medias = alunos.map((aluno) => {
         const somaNotas = aluno.notas.reduce((total, nota) => total + nota, 0);
         const media = somaNotas / aluno.notas.length;
@@ -133,13 +133,14 @@
         return aluno;
     });
 
-    // Segunda Forma
+    // Segunda resolução
     const calcM = (aluno) => { aluno.media = aluno.notas.reduce((total, nota) => total + nota, 0) / aluno.notas.length };
 
     const medias2 =  alunos.map((aluno) => { 
         calcM(aluno); 
         return aluno;
     });
+    
     console.log(" \n")
     console.log("--- Exercicio 04 ---")
     console.log(" -- primeira resolução -- ")
