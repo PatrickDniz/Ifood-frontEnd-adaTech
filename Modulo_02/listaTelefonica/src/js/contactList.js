@@ -13,19 +13,27 @@ const removeIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox=
 //Funções
 const recovery = () => {
     const allContacts = localStorage.getItem("contacts");
-    const allContactsJson = JSON.parse(allContacts)
-    
-   for(let key in allContactsJson){
-        const name = key;
-        const phone = allContactsJson[key];
-        createContact(name, phone);
-   }
+
+    if(!!allContacts){
+        const allContactsJson = JSON.parse(allContacts)
+        for(let key in allContactsJson){
+             const name = key;
+             const phone = allContactsJson[key]; 
+             createContact(name, phone);
+        }
+    } else {
+         saveLocal();
+    }  
 }
 
 const validationName = (name) => {
     const allContacts = localStorage.getItem("contacts");
-    const allContactsJson = JSON.parse(allContacts);
-    return !allContactsJson[name];
+    if(allContacts){
+        const allContactsJson = JSON.parse(allContacts);
+        return !allContactsJson[name]; 
+    } else { 
+        return true; 
+    }
 }
 const validationPhone = (phone) => { return phone == 15 } 
 
@@ -124,6 +132,8 @@ const editContact = (e) => {
         const newName = nameInputEdit.value;
         const newphone = phoneInputEdit.value;
 
+        console.log(oldName)
+
         if((validationName(newName) && validationPhone(newphone.length) || (newName == oldName && newphone == oldPhone))){
             element.setAttribute("name", newName);
             element.setAttribute("phone", newphone);
@@ -136,7 +146,7 @@ const editContact = (e) => {
     
             saveLocal();
         } else {
-            !validationName(newName) && newName != oldName ? nameInputEdit.classList.add("error") : null;
+            !validationName(newName) || newName == oldName ? nameInputEdit.classList.add("error") : null;
             !validationPhone(newphone.length) ? phoneInputEdit.classList.add("error") : null;
         }
     });
